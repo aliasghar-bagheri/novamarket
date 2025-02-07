@@ -1,17 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { vazirFont } from '@/constants/fonts';
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: {
@@ -34,6 +24,14 @@ export default function RootLayout({
     >
       <body className={`${vazirFont.variable} antialiased`}>
         {children}
+        <Toaster
+          duration={3000}
+          dir="rtl"
+          position="top-center"
+          closeButton
+          richColors
+          expand
+        />
       </body>
     </html>
   );
