@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { vazirFont } from '@/constants/fonts';
 import { Toaster } from 'sonner';
+import ReactQueryProvider from '@/lib/tanstack-query/ReactQueryProvider';
 
 export const metadata: Metadata = {
   title: {
@@ -23,15 +24,17 @@ export default function RootLayout({
       dir="rtl"
     >
       <body className={`${vazirFont.variable} antialiased`}>
-        {children}
-        <Toaster
-          duration={3000}
-          dir="rtl"
-          position="top-center"
-          closeButton
-          richColors
-          expand
-        />
+        <ReactQueryProvider>
+          {children}
+          <Toaster
+            duration={3000}
+            dir="rtl"
+            position="top-center"
+            closeButton
+            richColors
+            expand
+          />
+        </ReactQueryProvider>
       </body>
     </html>
   );
