@@ -1,4 +1,4 @@
-import { I_User } from '..';
+import { I_Cart, I_Payment, I_User } from '..';
 
 export type GetOTPData = Pick<I_User, 'phoneNumber'>;
 
@@ -14,4 +14,10 @@ export interface CheckOTPData extends Pick<I_User, 'phoneNumber'> {
 export interface CheckOTPResult {
   message: string;
   user: I_User;
+}
+
+export interface GetUserResult {
+  user: I_User;
+  payment: I_Payment;
+  cart: I_Cart;
 }
