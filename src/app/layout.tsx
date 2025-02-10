@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import 'swiper/css';
 import '@/styles/globals.css';
 import { vazirFont } from '@/constants/fonts';
 import { Toaster } from 'sonner';
