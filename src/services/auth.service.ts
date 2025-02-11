@@ -10,3 +10,8 @@ export async function getOTPApi(data: GetOTPData): Promise<GetOTPResult> {
 export async function checkOTPApi(data: CheckOTPData): Promise<CheckOTPResult> {
   return http.post('/user/check-otp', data).then(({ data }) => data.data);
 }
+
+// -------------------- SignOut user
+export async function signOutApi(): Promise<void> {
+  return http.post('/user/logout');
+}
