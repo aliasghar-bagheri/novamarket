@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import DashboardCardList from './_/components/DashboardCardList';
-import { DashboardCardsSkeleton } from '@/components/ui/Skeleton';
+import { DashboardCardsSkeleton, TableSkeleton } from '@/components/ui/Skeleton';
 import RecentPayments from './_/components/RecentPayments';
 import RecentUsers from './_/components/users/RecentUsers';
 import RecentProducts from './_/components/products/RecentProducts';
@@ -19,20 +19,20 @@ export default function DashboardPage() {
       <div className="grid grid-cols-12 md:gap-x-6 gap-y-10 md:gap-y-0">
         <div className="col-span-full md:col-span-7 xl:col-span-8 2xl:col-span-9 space-y-5">
           <h3 className="text-secondary-900 text-base">مشتریان اخیر</h3>
-          <Suspense>
+          <Suspense fallback={<TableSkeleton />}>
             <RecentUsers />
           </Suspense>
         </div>
         <div className="col-span-full md:col-span-5 xl:col-span-4 2xl:col-span-3 space-y-5">
           <h3 className="text-secondary-900 text-base">تراکنش های اخیر</h3>
-          <Suspense>
+          <Suspense fallback={<TableSkeleton />}>
             <RecentPayments />
           </Suspense>
         </div>
       </div>
       <div className="space-y-5">
         <h3 className="text-secondary-900 text-base">محصولات</h3>
-        <Suspense>
+        <Suspense fallback={<TableSkeleton />}>
           <RecentProducts />
         </Suspense>
       </div>
