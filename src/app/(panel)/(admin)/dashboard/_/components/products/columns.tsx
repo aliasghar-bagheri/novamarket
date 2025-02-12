@@ -4,6 +4,7 @@ import Avatar from '@/components/ui/Avatar';
 import { DataTableColumn } from '@/components/ui/DataTable';
 import { I_Product } from '@/types';
 import { convertDateToPersian } from '@/util/convertDateToPersian';
+import ProductsTableActions from './ProductsTableActions';
 
 export const recentProductColumns: DataTableColumn<I_Product>[] = [
   {
@@ -20,7 +21,12 @@ export const recentProductColumns: DataTableColumn<I_Product>[] = [
     key: 'title',
     label: 'نام محصول',
     render: (product) => (
-      <p className="truncate line-clamp-1 max-w-96 font-medium">{product.title}</p>
+      <p
+        className="truncate line-clamp-1 w-[400px] font-medium"
+        title={product.title}
+      >
+        {product.title}
+      </p>
     ),
   },
   {
@@ -65,5 +71,10 @@ export const recentProductColumns: DataTableColumn<I_Product>[] = [
     key: 'updatedAt',
     label: 'تاریخ بروزرسانی',
     render: (product) => <p suppressHydrationWarning>{convertDateToPersian(product.createdAt)}</p>,
+  },
+  {
+    key: '_id',
+    label: 'تاریخ بروزرسانی',
+    render: (product) => <ProductsTableActions product={product} />,
   },
 ];
