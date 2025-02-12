@@ -1,6 +1,6 @@
 import { http } from '@/lib/axios/config';
 import { I_Payment, I_User } from '@/types';
-import { TServiceApiArguments } from '@/types/services';
+import { ActionApiResult, TServiceApiArguments } from '@/types/services';
 
 export async function getAllUsersApi(args?: TServiceApiArguments): Promise<I_User[]> {
   try {
@@ -26,4 +26,8 @@ export async function getAllPaymentsApi(args?: TServiceApiArguments): Promise<I_
     console.log(error);
     return [];
   }
+}
+
+export async function deleteProductApi(productId: string): Promise<ActionApiResult> {
+  return http.delete(`/admin/product/remove/${productId}`).then(({ data }) => data.data);
 }

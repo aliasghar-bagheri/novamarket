@@ -6,6 +6,10 @@ export interface TServiceApiArguments {
   options?: AxiosRequestConfig;
 }
 
+export interface ActionApiResult {
+  message: string;
+}
+
 export type GetOTPData = Pick<I_User, 'phoneNumber'>;
 
 export interface GetOTPResult extends Pick<I_User, 'phoneNumber'> {
