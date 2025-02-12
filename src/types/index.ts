@@ -113,12 +113,12 @@ export interface I_Cart {
 }
 
 export enum E_PaymnetType {
-  'UNCOMPLETED',
-  'CANCELLED',
-  'COMPLETED',
-  'PENDING',
-  'PROCESSED',
-  'PAID',
+  'UNCOMPLETED' = 'UNCOMPLETED',
+  'CANCELLED' = 'CANCELLED',
+  'COMPLETED' = 'COMPLETED',
+  'PENDING' = 'PENDING',
+  'PROCESSED' = 'PROCESSED',
+  'PAID' = 'PAID',
 }
 
 export enum E_PaymnetMethod {
