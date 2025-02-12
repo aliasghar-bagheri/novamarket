@@ -43,6 +43,15 @@ export default {
       fontFamily: {
         sans: ['var(--font-vazir)', ...fontFamily.sans],
       },
+      animation: {
+        dropIn: 'dropIn 0.1s ease-in-out',
+      },
+      keyframes: {
+        dropIn: {
+          '0%': { opacity: '0.5', scale: '0.95' },
+          '100%': { opacity: '1', scale: '1' },
+        },
+      },
       container: {
         center: true,
         padding: '1rem',
