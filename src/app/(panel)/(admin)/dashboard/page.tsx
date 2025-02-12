@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import DashboardCardList from './_/components/DashboardCardList';
 import { DashboardCardsSkeleton } from '@/components/ui/Skeleton';
-import RecentUsers from './_/components/RecentUsers';
+import RecentUsers from './_/components/users/RecentUsers';
 export default function DashboardPage() {
   return (
     <div className="w-full space-y-10">

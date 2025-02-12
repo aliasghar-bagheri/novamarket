@@ -3,7 +3,7 @@ import { getAllUsersApi } from '@/services/admin.service';
 import { setCookieOnReq } from '@/util/setCookieOnReq';
 import { cookies } from 'next/headers';
 import queryString from 'query-string';
-import { userColumns } from './users/columns';
+import { userColumns } from './columns';
 
 export default async function RecentUsers() {
   const queries = queryString.stringify({ limit: 5 });
