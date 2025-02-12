@@ -97,6 +97,24 @@
   .inputField {
     @apply px-3 py-4 bg-secondary-200 placeholder:text-secondary-500 border border-secondary-100 text-xs rounded outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-primary-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
   }
+  .badge {
+    @apply inline-block md:text-base whitespace-nowrap rounded-xl px-2 py-0.5;
+  }
+  .badge-primary {
+    @apply bg-primary-100/50 backdrop-blur text-primary-500 dark:bg-primary-800/50;
+  }
+  .badge-secondary {
+    @apply bg-secondary-100/50 backdrop-blur text-secondary-500 dark:bg-secondary-800/50;
+  }
+  .badge-success {
+    @apply bg-green-100/50 backdrop-blur text-green-500 dark:bg-green-800/50;
+  }
+  .badge-error {
+    @apply bg-red-100/50 backdrop-blur text-red-500 dark:bg-red-900/50;
+  }
+  .badge-warning {
+    @apply bg-yellow-100/50 backdrop-blur text-yellow-500 dark:bg-yellow-800/50;
+  }
 }
 
 body {
