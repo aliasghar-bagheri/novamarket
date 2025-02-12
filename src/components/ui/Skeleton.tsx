@@ -38,3 +38,21 @@ export function DashboardCardsSkeleton({ className, type = 'wave', count = 4 }: 
     </div>
   );
 }
+
+export function TableSkeleton({ className, type = 'wave' }: Skeleton) {
+  return (
+    <div className="w-full">
+      <div className="w-full bg-secondary-0 py-6 rounded-t border border-secondary-200" />
+      <div
+        className={clsx(
+          'h-28 flex-1 w-full relative rounded-b overflow-hidden bg-secondary-200',
+          className,
+          {
+            'skeleton-wave': type === 'wave',
+            'animate-pulse ': type === 'pulse',
+          }
+        )}
+      />
+    </div>
+  );
+}
