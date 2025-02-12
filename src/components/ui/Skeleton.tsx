@@ -5,6 +5,7 @@ import clsx from 'clsx';
 interface Skeleton {
   className?: string;
   type?: 'wave' | 'pulse';
+  count?: number;
 }
 
 export function CircleSkeleton({ className, type = 'wave' }: Skeleton) {
@@ -15,5 +16,25 @@ export function CircleSkeleton({ className, type = 'wave' }: Skeleton) {
         'animate-pulse ': type === 'pulse',
       })}
     />
+  );
+}
+
+export function DashboardCardsSkeleton({ className, type = 'wave', count = 4 }: Skeleton) {
+  return (
+    <div className="container flex flex-wrap justify-center gap-5 py-10">
+      {Array.from({ length: count }).map((_, index) => (
+        <div
+          key={index}
+          className={clsx(
+            'h-28 flex-1 w-full min-w-48 sm:min-w-64 max-w-64 rounded-3xl relative overflow-hidden bg-secondary-200',
+            className,
+            {
+              'skeleton-wave': type === 'wave',
+              'animate-pulse ': type === 'pulse',
+            }
+          )}
+        />
+      ))}
+    </div>
   );
 }
