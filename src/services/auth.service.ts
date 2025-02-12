@@ -1,5 +1,5 @@
 import { http } from '@/lib/axios/config';
-import { CheckOTPData, CheckOTPResult, GetOTPData, GetOTPResult } from '@/types/services/auth';
+import { CheckOTPData, CheckOTPResult, GetOTPData, GetOTPResult } from '@/types/services';
 
 // -------------------- Get otp code
 export async function getOTPApi(data: GetOTPData): Promise<GetOTPResult> {

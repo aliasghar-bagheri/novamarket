@@ -1,5 +1,5 @@
 import { http } from '@/lib/axios/config';
-import { GetUserResult } from '@/types/services/auth';
+import { GetUserResult } from '@/types/services';
 import { AxiosRequestConfig } from 'axios';
 
 // -------------------- Get current user

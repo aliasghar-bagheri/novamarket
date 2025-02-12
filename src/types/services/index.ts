@@ -1,4 +1,10 @@
 import { I_Cart, I_Payment, I_User } from '..';
+import { AxiosRequestConfig } from 'axios';
+
+export interface TServiceApiArguments {
+  queries?: string;
+  options?: AxiosRequestConfig;
+}
 
 export type GetOTPData = Pick<I_User, 'phoneNumber'>;
 
