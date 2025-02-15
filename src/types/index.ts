@@ -167,3 +167,14 @@ export interface I_Coupon {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface I_CommonPropsFormField {
+  className?: string;
+  name?: string;
+  isRequired?: boolean;
+  label?: string;
+  error?: string;
+  description?: string;
+  layout?: 'vertical' | 'horizontal';
+  borderless?: boolean;
+}
