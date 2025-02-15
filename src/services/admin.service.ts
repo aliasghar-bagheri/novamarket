@@ -28,6 +28,29 @@ export async function getAllPaymentsApi(args?: TServiceApiArguments): Promise<I_
   }
 }
 
+export async function uploadProductImageApi(file: File, onProgress?: (progress: number) => void) {
+  try {
+    const formData = new FormData();
+    formData.append('productImage', file);
+
+    const { data } = await http.post('/admin/product/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      onUploadProgress(progress) {
+        if (onProgress) {
+          const { total, loaded } = progress;
+          onProgress(Math.floor((loaded * 100) / (total || 3000)));
+        }
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function deleteProductApi(productId: string): Promise<ActionApiResult> {
   return http.delete(`/admin/product/remove/${productId}`).then(({ data }) => data.data);
 }
