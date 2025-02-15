@@ -1,3 +1,4 @@
+import { ProductSchemaType } from '@/lib/validations/product';
 import { I_Cart, I_Payment, I_User } from '..';
 import { AxiosRequestConfig } from 'axios';
 
@@ -31,3 +32,5 @@ export interface GetUserResult {
   payment: I_Payment;
   cart: I_Cart;
 }
+
+export type CreateProductData = ProductSchemaType;

@@ -1,6 +1,10 @@
 import { http } from '@/lib/axios/config';
 import { I_Payment, I_User } from '@/types';
-import { ActionApiResult, TServiceApiArguments } from '@/types/services';
+import {
+  ActionApiResult,
+  CreateProductData,
+  TServiceApiArguments,
+} from '@/types/services';
 
 export async function getAllUsersApi(args?: TServiceApiArguments): Promise<I_User[]> {
   try {
@@ -49,6 +53,10 @@ export async function uploadProductImageApi(file: File, onProgress?: (progress: 
   } catch (error) {
     throw error;
   }
+}
+
+export async function createProductApi(productData: CreateProductData): Promise<ActionApiResult> {
+  return http.post('/admin/product/add', productData).then(({ data }) => data.data);
 }
 
 export async function deleteProductApi(productId: string): Promise<ActionApiResult> {
