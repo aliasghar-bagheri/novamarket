@@ -1,5 +1,4 @@
 import Button from '@/components/ui/Button';
-import Input from '@/components/ui/Input';
 import { ArrowRight, Edit2 } from 'lucide-react';
 import React from 'react';
 import OTPInput from 'react-otp-input';
@@ -67,10 +66,10 @@ export default function OTPVerificationForm({
               direction: 'ltr',
             }}
             renderInput={(props) => (
-              <Input
+              <input
                 {...props}
                 type="number"
-                className="flex-1 max-w-14 py-3 text-base"
+                className="inputField flex-1 max-w-12 py-3 text-base"
                 name="otp"
                 id="otp"
               />
