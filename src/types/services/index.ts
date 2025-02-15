@@ -34,3 +34,8 @@ export interface GetUserResult {
 }
 
 export type CreateProductData = ProductSchemaType;
+
+export interface UpdateProductData {
+  productId: string;
+  productData: ProductSchemaType;
+}

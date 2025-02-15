@@ -4,6 +4,7 @@ import {
   ActionApiResult,
   CreateProductData,
   TServiceApiArguments,
+  UpdateProductData,
 } from '@/types/services';
 
 export async function getAllUsersApi(args?: TServiceApiArguments): Promise<I_User[]> {
@@ -57,6 +58,15 @@ export async function uploadProductImageApi(file: File, onProgress?: (progress: 
 
 export async function createProductApi(productData: CreateProductData): Promise<ActionApiResult> {
   return http.post('/admin/product/add', productData).then(({ data }) => data.data);
+}
+
+export async function updateProductApi({
+  productId,
+  productData,
+}: UpdateProductData): Promise<ActionApiResult> {
+  return http
+    .patch(`/admin/product/update/${productId}`, productData)
+    .then(({ data }) => data.data);
 }
 
 export async function deleteProductApi(productId: string): Promise<ActionApiResult> {
