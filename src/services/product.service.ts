@@ -14,3 +14,16 @@ export async function getAllProductsApi(args?: TServiceApiArguments): Promise<I_
     return [];
   }
 }
+
+export async function getProductById(productId: string): Promise<I_Product | undefined> {
+  try {
+    const { data } = await http.get(`/product/${productId}`);
+
+    const { product } = data.data || {};
+
+    return product;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
+}
